@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      require: true,
+      required: true,
       min: 2,
       max: 100,
     },
@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       max: 50,
-      uniquue: true,
+      unique: true,
     },
     password: {
       type: String,
@@ -31,9 +31,7 @@ const UserSchema = new mongoose.Schema(
       default: "admin",
     },
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
 const User = mongoose.model("User", UserSchema);
